@@ -3,9 +3,9 @@
 /**
  * Shared functions used by the beginner profile
  *
- * This file is included by the _init.php file, and is here just as an example. 
+ * This file is included by the _init.php file, and is here just as an example.
  * You could place these functions in the _init.php file if you prefer, but keeping
- * them in this separate file is a better practice. 
+ * them in this separate file is a better practice.
  *
  */
 
@@ -85,7 +85,7 @@ function renderNavTree($items, $maxDepth = 3) {
 		echo "<a href='$item->url'>$item->title</a>";
 
 		// if the item has children and we're allowed to output tree navigation (maxDepth)
-		// then call this same function again for the item's children 
+		// then call this same function again for the item's children
 		if($item->hasChildren() && $maxDepth) {
 			renderNavTree($item->children, $maxDepth-1);
 		}
@@ -96,4 +96,9 @@ function renderNavTree($items, $maxDepth = 3) {
 
 	// end our <ul> markup
 	echo "</ul>";
+}
+
+function hash_templatefile($filename) {
+	$hash = hash_file(Processwire\wire('config')->userAuthHashType, Processwire\wire('config')->paths->templates.$filename);
+	return Processwire\wire('config')->urls->templates.$filename.'?v='.$hash;
 }

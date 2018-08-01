@@ -6,56 +6,49 @@
 	<title><?php echo $page->title; ?></title>
 	<meta name="description" content="<?php echo $page->summary; ?>" />
 	<link href='//fonts.googleapis.com/css?family=Lusitana:400,700|Quattrocento:400,700' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/modern-business.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="<?php echo $config->urls->templates?>scripts/bootstrap.bundle.min.js" charset="utf-8"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/bootstrap.min.js" charset="utf-8"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/main.js" charset="utf-8"></script>
 </head>
-<body class='has-sidebar'>
 
-	<!-- top navigation -->
-	<ul class='topnav' role='navigation'><?php
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+	<a class="navbar-brand" href="<?= $pages->get('/')->url; ?>">DistributionPlus</a>
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+	  <ul class="navbar-nav ml-auto">
+		<?php
+			// top navigation consists of homepage and its visible children
+			$homepage = $pages->get('/');
+			$children = $homepage->children();
 
-		// top navigation consists of homepage and its visible children
-		$homepage = $pages->get('/'); 
-		$children = $homepage->children();
-
-		// make 'home' the first item in the navigation
-		$children->prepend($homepage); 
-
-		// render an <li> for each top navigation item
-		foreach($children as $child) {
-			if($child->id == $page->rootParent->id) {
-				// this $child page is currently being viewed (or one of it's children/descendents)
-				// so we highlight it as the current page in the navigation
-				echo "<li class='current' aria-current='true'><span class='visually-hidden'>Current page: </span><a href='$child->url'>$child->title</a></li>";
-			} else {
-				echo "<li><a href='$child->url'>$child->title</a></li>";
-			}
-		}
-
-		// output an "Edit" link if this page happens to be editable by the current user
-		if($page->editable()) {
-			echo "<li class='edit'><a href='$page->editUrl'>Edit</a></li>";
-		}
-
-	?></ul>
-
-	<!-- search form -->
-	<form class='search' action='<?php echo $pages->get('template=search')->url; ?>' method='get'>
-		<label for='search' class='visually-hidden'>Search:</label>
-		<input type='text' name='q' id='search' placeholder='Search' value='' />
-		<button type='submit' name='submit' class='visually-hidden'>Search</button>
-	</form>
-
-	<!-- breadcrumbs -->
-	<div class='breadcrumbs' role='navigation' aria-label='You are here:'><?php
-
-		// breadcrumbs are the current page's parents
-		foreach($page->parents() as $item) {
-			echo "<span><a href='$item->url'>$item->title</a></span> "; 
-		}
-		// optionally output the current page as the last item
-		echo "<span>$page->title</span> "; 
-
-	?></div>
-
-	<main id='main'>
-
+			// make 'home' the first item in the navigation
+			$children->prepend($homepage);
+		?>
+		<?php foreach ($homepage->and($homepage->children) as $child) : ?>
+			<?php if ($child !== $pages->get('/')) : ?>
+				<?php if ($child !== $pages->get('template=request-demo')) : ?>
+					<li class="nav-item">
+					  <a class="nav-link" href="<?= $child->url; ?>"><?= $child->title; ?></a>
+					</li>
+				<?php else : ?>
+					<li class="nav-item ml-2">
+					  <a class="nav-link btn-sm btn-danger" href="<?= $child->url; ?>" target="_blank"><?= $child->title; ?></a>
+					</li>
+				<?php endif; ?>
+			<?php endif; ?>
+		<?php endforeach; ?>
+	  </ul>
+	</div>
+  </div>
+</nav>
