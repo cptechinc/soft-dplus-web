@@ -20,20 +20,32 @@
 
   </head>
 
-  <body>
+  <body class="demo-background" style='background-image: url("<?php echo $page->images->url; ?>")'>
 
     <!-- Page Content -->
     <div class="container">
-
       <!-- Contact Form -->
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row demo-request">
           <div class="col-sm-6">
-              <form name="sentMessage" id="contactForm" novalidate>
+              <form name="sentMessage" id="contactForm" class="no-opacity" novalidate>
                 <div class="control-group form-group">
                   <div class="controls">
-                    <label>Full Name:</label>
+                    <label>Name:</label>
                     <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block"></p>
+                  </div>
+                </div>
+                <div class="control-group form-group">
+                  <div class="controls">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                  </div>
+                </div>
+                <div class="control-group form-group">
+                  <div class="controls">
+                    <label>Company:</label>
+                    <input type="text" class="form-control" id="company" required data-validation-required-message="Please enter your company.">
                     <p class="help-block"></p>
                   </div>
                 </div>
@@ -45,14 +57,8 @@
                 </div>
                 <div class="control-group form-group">
                   <div class="controls">
-                    <label>Email Address:</label>
-                    <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-                  </div>
-                </div>
-                <div class="control-group form-group">
-                  <div class="controls">
                     <label>Message:</label>
-                    <textarea rows="5" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                    <textarea rows="3" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                   </div>
                 </div>
                 <div id="success"></div>
@@ -62,7 +68,9 @@
           </div>
           <div class="col-sm-6">
               <div class="demo-info">
-                  <h4>With DistributionPlus you will receive:</h4></br>
+                  <h4><strong>Make your software work for you again.</strong></h4></br>
+                  <p>DistributionPlus is a complete ERP system that uses integrations, so you don't have to work around your system with manual processes to make it work correctly.</p>
+                  <p><strong>With DistributionPlus you will receive:</strong></p>
                   <p><i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Software that fits the way that you do business</br>
                   <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Rapid implementation</br>
                   <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Software that grows with you</br>

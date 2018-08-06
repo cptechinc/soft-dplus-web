@@ -8,5 +8,19 @@ ul {list-style-type: none;}
     DEMO
 *******************************************/
 
-.demo-request {margin-top: 15%;}
+.demo-request {
+    background-color: #fefefe;
+    margin-top: 10%;
+    padding: 3%;
+    border-radius: 10px;
+    opacity: .95;
+
+}
+
+.no-opacity {opacity: 1;}
+
 .demo-info {padding: 5%;}
+
+/*******************************************
+    SOFTWARE
+*******************************************/
