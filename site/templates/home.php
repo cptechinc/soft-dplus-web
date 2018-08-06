@@ -44,7 +44,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h1 class="my-4">Welcome to DistributionPlus</h1>
+      <h1 class="my-4">Welcome to <?= $appconfig->site_displayname; ?></h1>
 
       <!-- Marketing Icons Section -->
       <div class="row">

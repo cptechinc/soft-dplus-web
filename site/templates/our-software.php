@@ -19,14 +19,14 @@
         <div class="col-lg-3 mb-4">
           <div class="list-group">
               <?php foreach ($page->children as $child) : ?>
-                  <a href="#<?= $child->title; ?>" class="list-group-item"><?= $child->title; ?></a>
+                  <a id="<?= $child->title; ?>-id" href="#<?= $child->title; ?>" class="list-group-item"><?= $child->title; ?></a>
               <?php endforeach; ?>
           </div>
         </div>
         <!-- Content Column -->
         <div class="col-lg-9 mb-4">
             <?php foreach ($page->children as $child) : ?>
-                <div id="#<?= $child->title; ?>">
+                <div id="<?= $child->title; ?>">
                     <h3><?= $child->title; ?></h3>
                     <?= $child->body; ?>
                 </div>

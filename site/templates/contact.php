@@ -4,9 +4,7 @@
     <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Contact
-        <small>Subheading</small>
-      </h1>
+      <h1 class="mt-4 mb-3">Contact</h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -25,23 +23,11 @@
         </div>
         <!-- Contact Details Column -->
         <div class="col-lg-4 mb-4">
-          <h3>Contact Details</h3>
-          <p>
-            3481 Melrose Place
-            <br>Beverly Hills, CA 90210
-            <br>
-          </p>
-          <p>
-            <abbr title="Phone">P</abbr>: (123) 456-7890
-          </p>
-          <p>
-            <abbr title="Email">E</abbr>:
-            <a href="mailto:name@example.com">name@example.com
-            </a>
-          </p>
-          <p>
-            <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
-          </p>
+          <h3><?= $page->contact_name; ?></h3>
+          <p><?= $page->address; ?></p>
+          <p>Phone: <?= $page->phone; ?></p>
+          <p>Email: <a href="mailto:<?= $page->email; ?>"><?= $page->email; ?></a></p>
+          <p>Hours: <?= $page->hours; ?></p>
         </div>
       </div>
       <!-- /.row -->
@@ -51,6 +37,7 @@
       <div class="row">
         <div class="col-lg-8 mb-4">
           <h3>Send us a Message</h3>
+          <p><?= $page->body; ?></p>
           <form name="sentMessage" id="contactForm" novalidate>
             <div class="control-group form-group">
               <div class="controls">
@@ -74,7 +61,7 @@
             <div class="control-group form-group">
               <div class="controls">
                 <label>Message:</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                <textarea rows="5" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
               </div>
             </div>
             <div id="success"></div>

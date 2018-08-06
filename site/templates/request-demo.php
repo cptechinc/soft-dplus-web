@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Distribution Plus</title>
+    <title>Request a Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo $config->urls->templates?>styles/bootstrap.min.css" rel="stylesheet">
@@ -69,14 +69,14 @@
           <div class="col-sm-6">
               <div class="demo-info">
                   <h4><strong>Make your software work for you again.</strong></h4></br>
-                  <p>DistributionPlus is a complete ERP system that uses integrations, so you don't have to work around your system with manual processes to make it work correctly.</p>
-                  <p><strong>With DistributionPlus you will receive:</strong></p>
+                  <p><?= $appconfig->site_displayname; ?> is a complete ERP system that uses integrations, so you don't have to work around your system with manual processes to make it work correctly.</p>
+                  <p><strong>With <?= $appconfig->site_displayname; ?> you will receive:</strong></p>
                   <p><i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Software that fits the way that you do business</br>
                   <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Rapid implementation</br>
                   <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Software that grows with you</br>
                   <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;No duplicate tasks, because processes are integrated</br>
                   <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Your choice of a hosted (cloud) or premise based system</p>
-                  <p>See why distributors consider DistributionPlus to be the complete solution for their business.</p>
+                  <p>See why distributors consider <?= $appconfig->site_displayname; ?> to be the complete solution for their business.</p>
               </div>
           </div>
       </div>
@@ -86,13 +86,13 @@
     <!-- /.container -->
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/jquery.min.js"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/bootstrap.bundle.min.js"></script>
 
     <!-- Contact form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/contact_me.js"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/jqBootstrapValidation.js"></script>
 
   </body>
 

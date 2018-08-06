@@ -12,6 +12,7 @@
  */
 
 include_once("./_func.php"); // include our shared functions
+$appconfig = $pages->get('/config/');
 
 $config->styles->append(hash_templatefile('styles/main.css'));
 $config->styles->append(hash_templatefile('styles/bootstrap.min.css'));
@@ -21,3 +22,5 @@ $config->styles->append(hash_templatefile('styles/bootstrap-reboot.min.css'));
 $config->scripts->append(hash_templatefile('scripts/main.js'));
 $config->scripts->append(hash_templatefile('scripts/bootstrap.bundle.min.js'));
 $config->scripts->append(hash_templatefile('scripts/bootstrap.min.js'));
+$config->scripts->append(hash_templatefile('scripts/contact_me.js'));
+$config->scripts->append(hash_templatefile('scripts/jqBootstrapValidation.js'));
