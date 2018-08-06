@@ -37,11 +37,11 @@
 		?>
 		<?php foreach ($homepage->and($homepage->children) as $child) : ?>
 			<?php if ($child !== $pages->get('/')) : ?>
-				<?php if ($child !== $pages->get('template=request-demo')) : ?>
+				<?php if ($child !== $pages->get('template=request-demo') && $child !== $pages->get('template=config')) : ?>
 					<li class="nav-item">
 					  <a class="nav-link" href="<?= $child->url; ?>"><?= $child->title; ?></a>
 					</li>
-				<?php else : ?>
+				<?php elseif ($child !== $pages->get('template=config')) : ?>
 					<li class="nav-item ml-2">
 					  <a class="nav-link btn-sm btn-danger" href="<?= $child->url; ?>" target="_blank"><?= $child->title; ?></a>
 					</li>
