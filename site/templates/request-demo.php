@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Request a Demo</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo $config->urls->templates?>styles/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?php echo $config->urls->templates?>styles/main.css" rel="stylesheet">
-    <link href="<?php echo $config->urls->templates?>styles/modern-business.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-  </head>
+<?php include('./_head.php'); ?>
 
   <body class="demo-background" style='background-image: url("<?php echo $page->images->url; ?>")'>
 
@@ -29,6 +9,9 @@
       <div class="row demo-request">
           <div class="col-sm-6">
               <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" class="no-opacity" novalidate>
+                <input type="hidden" name="requestdemo" value="Y">
+                <input type="hidden" name="active" value="Y">
+                <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
                 <div class="control-group form-group">
                   <div class="controls">
                     <label>Name:</label>

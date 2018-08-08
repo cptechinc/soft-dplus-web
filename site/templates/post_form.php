@@ -1,22 +1,20 @@
 <?php
-    $server = "localhost";
-    $username = "cptecomm";
-    $password = "rghopeless";
-    $dbname = "dplus_web";
+    $contact = new ContactLeads();
 
-    $connect = new mysqli($server, $username, $password, $dbname);
+    $name = "$_POST[name]";
+    $email = "$_POST[email]";
+    $company = "$_POST[company]";
+    $phone = "$_POST[phone]";
+    $requestdemo = "$_POST[requestdemo]";
+    $active = "$_POST[active]";
+    $updated = "$_POST[updated]";
 
-    if ($connect->connect_error) {
-        die("Connection failed: " . $connect->connect_error);
-}
-    $sql = "INSERT INTO contact_leads (name, email, company, phone, requestdemo, active, updated)
-        VALUES ('$_POST[name]', '$_POST[email]', '$_POST[company]', '$_POST[phone]', '$_POST[requestdemo]', '$_POST[active]', '$_POST[updated]')";
-
-    if ($connect->query($sql) === TRUE) {
-        echo "<h1>New record created successfully</h1>";
+    if (!$contact->email_exist($email, $debug = false)) {
+        if ($contact->create($name, $email, $company, $phone, $requestdemo, $active, $updated, $debug = false)) {
+            echo "<h1>New record created successfully</h1>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $connect->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $connect->error;
+        echo "<h1>Email already exists.</h1>";
     }
-
-    $connect->close();
-?>
