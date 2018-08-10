@@ -92,3 +92,33 @@
 			return $sql->fetch();
 		}
     }
+
+    /**
+     * Updates record in database that is associated with contact email
+     * @param  string $email    Contact email
+     * @param  string $active   Is contact active?
+     * @param  string $updated  Date/time contact updated
+     * @param  bool   $debug    Run in debug?
+     * @return array            One contact lead record
+     */
+    function update_contactlead(ContactLeads $contact, $debug = false) {
+        $originalcontact = ContactLeads::load($contact->email);
+        $properties = array_keys($contact->_toArray());
+        $q = (new QueryBuilder())->table('contact_leads');
+        $q->mode('update');
+		foreach ($properties as $property) {
+			if ($contact->$property != $originalcontact->$property) {
+				$q->set($property, $contact->$property);
+			}
+		}
+		$q->where('email', $contact->email);
+
+        $sql = DplusWire::wire('database')->prepare($q->render());
+
+		if ($debug) {
+			return $q->generate_sqlquery();
+		} else {
+			$sql->execute($q->params);
+			return $q->generate_sqlquery($q->params);
+		}
+    }

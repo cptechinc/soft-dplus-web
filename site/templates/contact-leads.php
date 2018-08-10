@@ -25,8 +25,10 @@
                 </thead>
                 <tbody>
                     <?php foreach ($leads as $lead) : ?>
-                        <form class="" action="index.html" method="post">
-                            <?php if ($lead->active =='Y') : ?>
+                        <form class="no-opacity" action="<?php echo $pages->get('template=post_form')->url; ?>" method="post">
+                            <input type="hidden" name="action" value="update-contact">
+                            <input type="hidden" name="email" value="<?= $lead->email; ?>">
+                            <?php if ($lead->active == 'Y') : ?>
                                 <tr class="bg-info text-white">
                             <?php else : ?>
                                 <tr>
@@ -44,7 +46,7 @@
                                         <?= $lead->requestdemo; ?>
                                     </td>
                                     <td class="text-center">
-                                <?php if ($lead->active =='Y') : ?>
+                                <?php if ($lead->active == 'Y') : ?>
                                         <input type="checkbox" class="form-check-input" name="active" id="exampleCheck1" checked>
                                 <?php else : ?>
                                         <input type="checkbox" class="form-check-input" name="active" id="exampleCheck1">

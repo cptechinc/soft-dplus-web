@@ -66,13 +66,25 @@
          }
 
          public function set_active() {
-
+             $this->active = 'Y';
+             $this->updated = date("Y-m-d G:i:s");
+             return update_contactlead($this);
          }
 
          public function set_inactive() {
-
+             $this->active = 'N';
+             $this->updated = date("Y-m-d G:i:s");
+             return update_contactlead($this);
          }
 
+         /**
+		 * Updates the Contact in the database
+		 * @param  bool $debug     Determines if query will execute and if sQL is returned or Contact object
+		 * @return ContactLeads    SQL query string
+		 */
+         public function update($debug = false) {
+             return update_contactlead($this, $debug);
+         }
 
          /* =============================================================
 			GENERATE ARRAY FUNCTIONS
