@@ -9,6 +9,7 @@
       <div class="row demo-request">
           <div class="col-sm-6">
               <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" class="no-opacity" novalidate>
+                <input type="hidden" name="message" value="N/A">
                 <input type="hidden" name="requestdemo" value="Y">
                 <input type="hidden" name="active" value="Y">
                 <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
@@ -40,13 +41,14 @@
                 </div>
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">Request a Demo</button>
               </form>
           </div>
           <div class="col-sm-6">
               <div class="demo-info">
                   <h4><strong>Make your software work for you again.</strong></h4></br>
-                  <p><?= $appconfig->site_displayname; ?> is a complete ERP system that uses integrations, so you don't have to work around your system with manual processes to make it work correctly.</p>
+                  <p><?= $appconfig->site_displayname; ?> is a complete integrated software solution reducing your need for multiple vendors to take care
+                  of your business goals.</p>
                   <p><strong>With <?= $appconfig->site_displayname; ?> you will receive:</strong></p>
                   <p><i class="fa fa-check-circle-o green" aria-hidden="true"></i>&nbsp;&nbsp;Software that fits the way that you do business</br>
                   <i class="fa fa-check-circle-o green" aria-hidden="true"></i>&nbsp;&nbsp;Rapid implementation</br>
@@ -62,15 +64,4 @@
     </div>
     <!-- /.container -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="<?php echo $config->urls->templates?>scripts/jquery.min.js"></script>
-    <script src="<?php echo $config->urls->templates?>scripts/bootstrap.bundle.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="<?php echo $config->urls->templates?>scripts/contact_me.js"></script>
-    <script src="<?php echo $config->urls->templates?>scripts/jqBootstrapValidation.js"></script>
-
-  </body>
-
-</html>
+<?php include('./_foot.php'); ?>

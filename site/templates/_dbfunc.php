@@ -8,26 +8,20 @@
 
     /**
      * Insert Contact Lead record
-     * @param  string $name        Contact Name
-     * @param  string $email       Contact Email
-     * @param  string $company     Contact Company
-     * @param  string $phone       Contact Phone
-     * @param  string $requestdemo Is this from the Request demo form?
-     * @param  string $active      Is this lead active?
-     * @param  string $updated     Date/Time updated
+     * @param  ContactLeads $contact
      * @param  bool   $debug       Run in debug?
      * @return string              SQL Query
      */
-    function insert_contactlead($name, $email, $company, $phone, $requestdemo, $active, $updated, $debug = false) {
-		$q = (new QueryBuilder())->table('contact_leads');
+    function insert_contactlead(ContactLeads $contact, $debug = false) {
+        $properties = array_keys($contact->_toArray());
+        $q = (new QueryBuilder())->table('contact_leads');
 		$q->mode('insert');
-		$q->set('name', $name);
-        $q->set('email', $email);
-        $q->set('company', $company);
-        $q->set('phone', $phone);
-        $q->set('requestdemo', $requestdemo);
-        $q->set('active', $active);
-        $q->set('updated', $updated);
+
+        foreach ($properties as $property) {
+			if (!empty($contact->$property)) {
+				$q->set($property, $contact->$property);
+			}
+		}
 
 		$sql = DplusWire::wire('database')->prepare($q->render());
 
@@ -35,11 +29,17 @@
 			return $q->generate_sqlquery($q->params);
 		} else {
 			$sql->execute($q->params);
-			return $q->generate_sqlquery($q->params);
+			return DplusWire::wire('database')->lastInsertId();
 		}
     }
 
-    function existing_email($email, $debug =false) {
+    /**
+     * Checks to see if contact email already exists in database
+     * @param  string $email    Contact email
+     * @param  bool   $debug    Run in debug?
+     * @return bool             Does email exist?
+     */
+    function does_emailexist($email, $debug =false) {
         $q = (new QueryBuilder())->table('contact_leads');
         $q->where('email', $email);
 
@@ -54,7 +54,12 @@
 		}
     }
 
-    function get_contactleads($debug) {
+    /**
+     * Returns all records in contact leads database
+     * @param  bool   $debug    Run in debug?
+     * @return array            All contact lead records
+     */
+    function load_contactleads($debug) {
         $q = (new QueryBuilder())->table('contact_leads');
         $sql = DplusWire::wire('database')->prepare($q->render());
 
@@ -64,5 +69,26 @@
 			$sql->execute($q->params);
 			$sql->setFetchMode(PDO::FETCH_CLASS, 'ContactLeads');
 			return $sql->fetchAll();
+		}
+    }
+
+    /**
+     * Returns record in database that is associated with contact email
+     * @param  string $email    Contact email
+     * @param  bool   $debug    Run in debug?
+     * @return array            One contact lead record
+     */
+    function load_contactlead($email, $debug) {
+        $q = (new QueryBuilder())->table('contact_leads');
+        $q->where('email', $email);
+
+        $sql = DplusWire::wire('database')->prepare($q->render());
+
+		if ($debug) {
+			return $q->generate_sqlquery($q->params);
+		} else {
+			$sql->execute($q->params);
+			$sql->setFetchMode(PDO::FETCH_CLASS, 'ContactLeads');
+			return $sql->fetch();
 		}
     }
