@@ -23,10 +23,10 @@
         </div>
         <!-- Contact Details Column -->
         <div class="col-lg-4 mb-4">
-          <h3><?= $page->contact_name; ?></h3>
-          <p><?= $page->address; ?></p>
-          <p>Phone: <?= $page->phone; ?></p>
-          <p>Email: <a href="mailto:<?= $page->email; ?>"><?= $page->email; ?></a></p>
+          <h3><?= $appconfig->company_name; ?></h3>
+          <p><?= $appconfig->company_address; ?></p>
+          <p>Phone: <a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></p>
+          <p>Email: <a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
           <p>Hours: <?= $page->hours; ?></p>
         </div>
       </div>
@@ -38,30 +38,40 @@
         <div class="col-lg-8 mb-4">
           <h3>Send us a Message</h3>
           <p><?= $page->body; ?></p>
-          <form name="sentMessage" id="contactForm" novalidate>
+          <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" novalidate>
+            <input type="hidden" name="requestdemo" value="">
+            <input type="hidden" name="active" value="Y">
+            <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
             <div class="control-group form-group">
               <div class="controls">
                 <label>Full Name:</label>
-                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                <input type="text" class="form-control" name="name" id="name" required data-validation-required-message="Please enter your name.">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Company:</label>
+                <input type="text" class="form-control" name="company" id="company" required data-validation-required-message="Please enter your company.">
                 <p class="help-block"></p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                <input type="tel" class="form-control" name="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Email Address:</label>
-                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Message:</label>
-                <textarea rows="5" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                <textarea rows="5" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
               </div>
             </div>
             <div id="success"></div>

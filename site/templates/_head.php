@@ -20,7 +20,7 @@
 
 <?php
 
-if ($page->template->name != 'request-demo') {
+if ($page->template->name != 'request-demo' && $page->template->name != 'post_form') {
 	include('./nav.php');
 }
 
