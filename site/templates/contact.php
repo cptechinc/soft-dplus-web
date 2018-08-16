@@ -39,7 +39,7 @@
           <h3>Send us a Message</h3>
           <p><?= $page->body; ?></p>
           <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" novalidate>
-            <input type="hidden" name="action" value="contact">  
+            <input type="hidden" name="action" value="contact">
             <input type="hidden" name="requestdemo" value="N">
             <input type="hidden" name="active" value="Y">
             <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">

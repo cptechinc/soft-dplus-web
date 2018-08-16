@@ -26,6 +26,7 @@
             } else {
                 echo "<h1>Email already exists.</h1>";
             }
+
             break;
         case 'update-contact';
             $email = $input->post->text('email');
