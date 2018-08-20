@@ -38,10 +38,8 @@
         <div class="col-lg-8 mb-4">
           <h3>Send us a Message</h3>
           <p><?= $page->body; ?></p>
-          <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" novalidate>
+          <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post">
             <input type="hidden" name="action" value="contact">
-            <input type="hidden" name="requestdemo" value="N">
-            <input type="hidden" name="active" value="Y">
             <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
             <div class="control-group form-group">
               <div class="controls">
@@ -75,9 +73,7 @@
                 <textarea rows="5" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
               </div>
             </div>
-            <div id="success"></div>
-            <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
 

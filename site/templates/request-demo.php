@@ -8,10 +8,9 @@
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row demo-request">
           <div class="col-sm-6">
-              <form action="<?= $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" class="no-opacity" novalidate>
-                <input type="hidden" name="action" value="contact">
+              <form action="<?= $pages->get('template=post_form')->url; ?>" method="post">
+                <input type="hidden" name="action" value="request-demo">
                 <input type="hidden" name="requestdemo" value="Y">
-                <input type="hidden" name="active" value="Y">
                 <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
                 <div class="control-group form-group">
                   <div class="controls">
@@ -39,9 +38,7 @@
                     <input type="tel" class="form-control" name="phone" required data-validation-required-message="Please enter your phone number.">
                   </div>
                 </div>
-                <div id="success"></div>
-                <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary" id="sendMessageButton">Request a Demo</button>
+                <button type="submit" class="btn btn-primary">Request a Demo</button>
               </form>
           </div>
           <div class="col-sm-6">

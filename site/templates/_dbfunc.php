@@ -17,6 +17,7 @@
         $q = (new QueryBuilder())->table('contact_leads');
 		$q->mode('insert');
 
+        $q->set('active', 'Y');
         foreach ($properties as $property) {
 			if (!empty($contact->$property)) {
 				$q->set($property, $contact->$property);
