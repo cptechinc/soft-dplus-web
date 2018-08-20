@@ -2,7 +2,9 @@
     GENERAL
 *******************************************/
 
-ul {list-style-type: none;}
+body {scroll-behavior: smooth !important;}
+
+ul {list-style: none;}
 
 /*******************************************
     DEMO
