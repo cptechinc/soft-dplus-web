@@ -12,10 +12,6 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/modern-business.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
-
-	<script src="<?php echo $config->urls->templates?>scripts/bootstrap.bundle.min.js" charset="utf-8"></script>
-    <script src="<?php echo $config->urls->templates?>scripts/bootstrap.min.js" charset="utf-8"></script>
-    <script src="<?php echo $config->urls->templates?>scripts/main.js" charset="utf-8"></script>
 </head>
 
 <?php

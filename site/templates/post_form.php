@@ -4,7 +4,7 @@
 	$action = $input->post->text('action');
 
     switch($action) {
-        case 'request-demo':
+        case 'contact':
             $contact = new ContactLeads();
             $contact->set('name', $input->post->text('name'));
             $contact->set('email', $input->post->text('email'));
@@ -26,7 +26,6 @@
             } else {
                 echo "<h1>Email already exists.</h1>";
             }
-
             break;
         case 'update-contact';
             $email = $input->post->text('email');

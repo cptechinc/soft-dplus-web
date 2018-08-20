@@ -18,7 +18,7 @@
         <!-- Map Column -->
         <div class="col-lg-8 mb-4">
           <!-- Embedded Google Map -->
-          <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11329.598621215955!2d-93.386095!3d44.772657!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x64f65f8d035537d8!2sCP+Tech!5e0!3m2!1sen!2sus!4v1533098076653"></iframe>
+          <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?= $page->google_map_code; ?>"></iframe>
 
         </div>
         <!-- Contact Details Column -->

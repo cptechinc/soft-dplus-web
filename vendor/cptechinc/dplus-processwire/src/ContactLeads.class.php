@@ -37,7 +37,7 @@
          * @param  bool   $debug        Run in debug?
          * @return string               SQL Query
          */
-         public function create($debug) {
+         public function create($debug = false) {
              if ($debug) {
                  return insert_contactlead($this, $debug);
              } else {

@@ -8,7 +8,7 @@
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row demo-request">
           <div class="col-sm-6">
-              <form action="<?php echo $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" class="no-opacity" novalidate>
+              <form action="<?= $pages->get('template=post_form')->url; ?>" method="post" name="sentMessage" id="contactForm" class="no-opacity" novalidate>
                 <input type="hidden" name="action" value="contact">
                 <input type="hidden" name="requestdemo" value="Y">
                 <input type="hidden" name="active" value="Y">

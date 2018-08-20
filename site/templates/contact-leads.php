@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                     <?php foreach ($leads as $lead) : ?>
-                        <form class="no-opacity" action="<?php echo $pages->get('template=post_form')->url; ?>" method="post">
+                        <form class="no-opacity" action="<?= $pages->get('template=post_form')->url; ?>" method="post">
                             <input type="hidden" name="action" value="update-contact">
                             <input type="hidden" name="email" value="<?= $lead->email; ?>">
                             <?php if ($lead->active == 'Y') : ?>

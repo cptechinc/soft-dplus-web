@@ -19,6 +19,7 @@ include_once($config->paths->vendor."cptechinc/dplus-processwire/src/ContactLead
 $appconfig = $pages->get('/config/');
 
 $config->styles->append(hash_templatefile('styles/main.css'));
+$config->styles->append(hash_templatefile('styles/modern-business.css'));
 $config->styles->append(hash_templatefile('styles/bootstrap.min.css'));
 $config->styles->append(hash_templatefile('styles/bootstrap-grid.min.css'));
 $config->styles->append(hash_templatefile('styles/bootstrap-reboot.min.css'));
