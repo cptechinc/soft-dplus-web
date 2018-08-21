@@ -1,7 +1,5 @@
-<?php include('./_head.php'); ?>
-
-  <body class="demo-background" style='background-image: url("<?php echo $page->images->url; ?>")'>
-
+<?php $page->htmlbodyattributes = $page->bootstrap->generate_attributes("class=demo-background|style=background-image: url('{$page->images->url}')"); ?>
+<?php include('./_head-blank.php'); ?>
     <!-- Page Content -->
     <div class="container">
       <!-- Contact Form -->
@@ -9,36 +7,36 @@
       <div class="row demo-request">
           <div class="col-sm-6">
               <form action="<?= $pages->get('template=post_form')->url; ?>" method="post">
-                <input type="hidden" name="action" value="request-demo">
-                <input type="hidden" name="requestdemo" value="Y">
-                <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
-                <div class="control-group form-group">
-                  <div class="controls">
-                    <label>Name:</label>
-                    <input type="text" class="form-control" name="name" required data-validation-required-message="Please enter your name.">
-                    <p class="help-block"></p>
+                  <input type="hidden" name="action" value="request-demo">
+                  <input type="hidden" name="requestdemo" value="Y">
+                  <input type="hidden" name="updated" value="<?= date("Y-m-d G:i:s"); ?>">
+                  <div class="control-group form-group">
+                  	  <div class="controls">
+	                      <label>Name:</label>
+	                      <input type="text" class="form-control" name="name" required data-validation-required-message="Please enter your name.">
+	                      <p class="help-block"></p>
+                  	  </div>
                   </div>
-                </div>
-                <div class="control-group form-group">
-                  <div class="controls">
-                    <label>Email:</label>
-                    <input type="email" class="form-control" name="email" required data-validation-required-message="Please enter your email address.">
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Email:</label>
+                    	  <input type="email" class="form-control" name="email" required data-validation-required-message="Please enter your email address.">
+                  	  </div>
                   </div>
-                </div>
-                <div class="control-group form-group">
-                  <div class="controls">
-                    <label>Company:</label>
-                    <input type="text" class="form-control" name="company" required data-validation-required-message="Please enter your company.">
-                    <p class="help-block"></p>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Company:</label>
+                    	  <input type="text" class="form-control" name="company" required data-validation-required-message="Please enter your company.">
+                    	  <p class="help-block"></p>
+                  	  </div>
                   </div>
-                </div>
-                <div class="control-group form-group">
-                  <div class="controls">
-                    <label>Phone Number:</label>
-                    <input type="tel" class="form-control" name="phone" required data-validation-required-message="Please enter your phone number.">
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Phone Number:</label>
+                          <input type="tel" class="form-control" name="phone" required data-validation-required-message="Please enter your phone number.">
+                      </div>
                   </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Request a Demo</button>
+                  <button type="submit" class="btn btn-primary">Request a Demo</button>
               </form>
           </div>
           <div class="col-sm-6">
@@ -61,4 +59,4 @@
     </div>
     <!-- /.container -->
 
-<?php include('./_foot.php'); ?>
+<?php include('./_foot-blank.php'); ?>

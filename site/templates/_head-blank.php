@@ -15,5 +15,3 @@
 </head>
 
 <body<?= $page->htmlbodyattributes; ?>>
-
-<?php include('./nav.php'); ?>

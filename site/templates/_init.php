@@ -16,6 +16,7 @@ include_once("./_dbfunc.php");
 include_once($config->paths->vendor."cptechinc/dplus-processwire/vendor/autoload.php");
 include_once($config->paths->vendor."cptechinc/dplus-base/vendor/autoload.php");
 include_once($config->paths->vendor."cptechinc/dplus-processwire/src/ContactLeads.class.php");
+include_once($config->paths->vendor."cptechinc/dplus-content/vendor/autoload.php");
 $appconfig = $pages->get('/config/');
 
 $config->styles->append(hash_templatefile('styles/main.css'));
@@ -27,5 +28,6 @@ $config->styles->append(hash_templatefile('styles/bootstrap-reboot.min.css'));
 $config->scripts->append(hash_templatefile('scripts/main.js'));
 $config->scripts->append(hash_templatefile('scripts/bootstrap.bundle.min.js'));
 $config->scripts->append(hash_templatefile('scripts/bootstrap.min.js'));
-$config->scripts->append(hash_templatefile('scripts/contact_me.js'));
-$config->scripts->append(hash_templatefile('scripts/jqBootstrapValidation.js'));
+
+$page->bootstrap = new HTMLWriter();
+$page->htmlbodyattributes = '';
