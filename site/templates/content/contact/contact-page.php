@@ -2,14 +2,7 @@
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">Contact</h1>
-
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="breadcrumb-item active">Contact</li>
-        </ol>
+        <h1 class="mt-3 mb-3 breadcrumb bg-warning font-weight-bold text-white">Contact</h1>
 
         <!-- Content Row -->
         <div class="row">
@@ -21,10 +14,10 @@
 
             <!-- Contact Details Column -->
             <div class="col-lg-4 mb-4">
-                <h3><?= $appconfig->company_name; ?></h3>
+                <h3 class="font-weight-bold"><?= $appconfig->company_name; ?></h3>
                 <p><?= $appconfig->company_address; ?></p>
-                <p>Phone: <a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></p>
-                <p>Email: <a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
+                <p>Phone: <a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></br>
+                    Email: <a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
                 <p>Hours: <?= $page->hours; ?></p>
             </div>
         </div>
@@ -34,7 +27,7 @@
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-lg-8 mb-4">
-                <h3>Send us a Message</h3>
+                <h3 class="font-weight-bold">Send us a Message</h3>
                 <p><?= $page->body; ?></p>
 
                 <div id="contact_form">
@@ -79,7 +72,7 @@
                                 <label class="error" for="message" id="message_error">This field is required.</label>
                             </div>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary button" id="contact-button" value="Send">Send Message</button>
+                        <button type="submit" name="submit" class="btn btn-info button" id="contact-button" value="Send">Send Message</button>
                     </form>
                 </div>
 

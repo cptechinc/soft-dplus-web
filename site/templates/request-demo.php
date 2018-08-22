@@ -36,7 +36,7 @@
                           <input type="tel" class="form-control" name="phone" required data-validation-required-message="Please enter your phone number.">
                       </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">Request a Demo</button>
+                  <button type="submit" class="btn btn-info">Request a Demo</button>
               </form>
           </div>
           <div class="col-sm-6">
