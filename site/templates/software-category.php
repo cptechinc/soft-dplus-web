@@ -5,12 +5,7 @@
 
         <!-- Page Heading/Breadcrumbs -->
 
-        <ul class="mt-3 breadcrumb bg-success">
-            <li class="breadcrumb-item">
-                <a href="<?= $page->parent->url; ?>" class="text-white-50"><?= $page->parent->title; ?></a>
-            </li>
-            <li class="breadcrumb-item text-white active"><?= $page->title; ?></li>
-        </ul>
+        <a href="<?= $page->parent->url; ?>" style="text-decoration:none;"><h1 class="mt-3 mb-3 breadcrumb bg-warning font-weight-bold text-white"><?= $page->parent->title; ?></h1></a>
 
         <!-- Content Row -->
         <div class="row">
@@ -29,7 +24,7 @@
             </div>
             <!-- Content Column -->
             <div class="col-lg-9 mb-4">
-                <h1 class="font-weight-bold"><?= $page->title; ?></h1>
+                <h1 class="font-weight-bold "><?= $page->title; ?></h1>
                 <p><?= $page->body; ?></p>
                 <?php $children = $page->children; ?>
                 <?php foreach ($children as $child) : ?>

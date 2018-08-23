@@ -11,28 +11,25 @@
 				<div class="carousel-item bg-warning active">
 	                <div class="container">
 	                	<div class="carousel-caption text-left pb-5">
-	                  		<h1 class="display-2 font-weight-bold">All-in-one Business Solution</h1>
-	                  		<p>DistributionPlus is the answer to all of your business needs. This is testing what this button can do. Request a demo. This is testing what this button can do. Request a demo.</p>
-					  		<p>Here's one point we highlight.</br>Here's another point we can highlight.</p>
-	                  		<p><a class="btn btn-lg btn-info pull-right" href="#" role="button">Sign up today</a></p>
+	                  		<h1 class="display-3 font-weight-bold">One System for All</h1>
+	                  		<p>No need to purchase other systems to run certain functions </p>
+	                  		<p><a class="btn btn-lg btn-primary pull-right" href="<?php echo $pages->get('template=request-demo')->url; ?>" role="button">Request a Demo Today</a></p>
 	                	</div>
 	              	</div>
 	            </div>
 		      	<div class="carousel-item bg-success">
 				    <div class="container">
 	  				  	<div class="carousel-caption text-left pb-5">
-	  					  	<h1 class="display-2 font-weight-bold">Another Point</h1>
-	  					  	<p>DistributionPlus is the answer to all of your business needs. This is testing what this button can do. Request a demo.</br>This is testing what this button can do. Request a demo.
-							DistributionPlus is the answer to all of your business needs. This is testing what this button can do. Request a demo. This is testing what this button can do. Request a demo.</p>
+	  					  	<h1 class="display-3 font-weight-bold">Multiple Methods of Input/Output</h1>
+	  					  	<p>eCommerce</br>Sales Portal</br>EDI</br>Dedicated Import and Export Utilities</li>
+	  					  	</ul>
 	  				 	</div>
 	  			  	</div>
 		        </div>
 		      	<div class="carousel-item bg-info">
 				  	<div class="container">
 	  				  	<div class="carousel-caption text-left pb-5">
-	  						<h1 class="display-2 font-weight-bold">Something Else</h1>
-	  						<p>DistributionPlus is the answer to all of your business needs. This is testing what this button can do. Request a demo. This is testing what this button can do. Request a demo.</p>
-	  						<p>Here's one point we highlight.</br>Here's another point we can highlight.</p>
+	  						<h1 class="display-3 font-weight-bold">Complete Integration of the Application Suite</h1>
 	  				  	</div>
 	  				</div>
 		      	</div>
@@ -86,22 +83,13 @@
 	<div class="container">
 	  <!-- Features Section -->
 	  	<div class="row mt-4 mb-4">
-			<div class="col-lg-6">
-		  		<h2>Features</h2>
-		  		<p>This software package includes:</p>
-		  		<ul>
-					<li>
-			  			<strong>Bootstrap v4</strong>
-					</li>
-					<li>jQuery</li>
-					<li>Font Awesome</li>
-					<li>Working contact form with validation</li>
-					<li>Unstyled page elements for easy customization</li>
-		  		</ul>
-		  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-			</div>
-			<div class="col-lg-6">
-		  		<img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+			<div class="col-lg-12">
+
+				<blockquote class="blockquote text-center">
+					<i class="fa fa-smile-o fa-5x text-success" aria-hidden="true"></i>
+				    <p class="my-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
+					<p class="font-italic text-right">Alan Puder, Northwest Graphic Supply</p>
+				</blockquote>
 			</div>
 	  	</div>
 	  <!-- /.row -->

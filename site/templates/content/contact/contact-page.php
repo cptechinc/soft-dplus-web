@@ -14,8 +14,8 @@
 
             <!-- Contact Details Column -->
             <div class="col-lg-4 mb-4">
-                <h3 class="font-weight-bold"><?= $appconfig->company_name; ?></h3>
-                <p><?= $appconfig->company_address; ?></p>
+                <p><strong><?= $appconfig->company_name; ?></strong></br>
+                <?= $appconfig->company_address; ?></p>
                 <p>Phone: <a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></br>
                     Email: <a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
                 <p>Hours: <?= $page->hours; ?></p>
@@ -27,7 +27,7 @@
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-lg-8 mb-4">
-                <h3 class="font-weight-bold">Send us a Message</h3>
+                <h3 class="breadcrumb bg-info font-weight-bold text-white">Send us a Message</h3>
                 <p><?= $page->body; ?></p>
 
                 <div id="contact_form">
@@ -36,7 +36,7 @@
                         <input type="hidden" name="updated" id="contact-updated" value="<?= date("Y-m-d G:i:s"); ?>">
                         <div class="alert response hidden" role="alert">
                             <h4 class="alert-heading">Well done!</h4>
-                            <p class="alert-text">Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                            <p class="alert-text">Thanks so much for your message! We will respond soon.</p>
                         </div>
                         <div class="control-group form-group">
                             <div class="controls">
