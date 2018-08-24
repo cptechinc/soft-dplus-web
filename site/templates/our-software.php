@@ -4,7 +4,7 @@
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-3 mb-3 breadcrumb bg-warning font-weight-bold text-white">Inside DistributionPlus</h1>
+        <h1 class="mt-3 mb-3 breadcrumb bg-info font-weight-bold text-white">Inside DistributionPlus</h1>
         <div class="row mt-5 mb-3">
             <div class="col-md-3 my-3 text-center">
                 <i class="fa fa-list-alt fa-5x text-info" aria-hidden="true"></i>
@@ -43,7 +43,7 @@
 
 
 
-        <h3 class="breadcrumb bg-success text-white font-weight-bold"><?= $page->title; ?></h3>
+        <h3 class="breadcrumb mt-4 bg-success text-white font-weight-bold"><?= $page->title; ?></h3>
         <!-- Content Row -->
         <div class="row">
             <?php $children = $page->children; ?>

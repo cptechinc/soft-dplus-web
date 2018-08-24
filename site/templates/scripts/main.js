@@ -16,52 +16,7 @@ $(function() {
         });
     });
     $('.error').hide();
-    // $(".button").click(function() {
-    //       // validate and process form here
-    //
-    //       $('.error').hide();
-    //       var action = $("input#contact-action").val();
-    //       var company = $("input#contact-updated").val();
-    //   	  var name = $("input#contact-name").val();
-    //   		if (name == "") {
-    //         $("label#name_error").show();
-    //         $("input#contact-name").focus();
-    //         return false;
-    //       }
-    //       var company = $("input#contact-company").val();
-    //   	  var email = $("input#contact-email").val();
-    //   		if (email == "") {
-    //         $("label#email_error").show();
-    //         $("input#contact-email").focus();
-    //         return false;
-    //       }
-    //   	  var phone = $("input#contact-phone").val();
-    //   		if (phone == "") {
-    //         $("label#phone_error").show();
-    //         $("input#contact-phone").focus();
-    //         return false;
-    //       }
-    //       var message = $("textarea#contact-message").val();
-    //         if (message == "") {
-    //         $("label#message_error").show();
-    //         $("textarea#contact-message").focus();
-    //         return false;
-    //       }
-    //
-    //       var dataString = 'action='+ action + '&updated='+ updated + '&name='+ name + '&company='+ company + '&email=' + email + '&phone=' + phone + '&message='+ message;
-    //       // alert (dataString);return false;
-    //       $.ajax({
-    //         type: "POST",
-    //         url: "<?= $pages->get('template=post_form')->url; ?>",
-    //         data: dataString,
-    //         success: function() {
-    //           $('#contact_form').html("<div id='message'></div>");
-    //           $('#message').html("<h2>Contact Form Submitted!</h2>").append("<p>We will be in touch soon.</p>");
-    //         }
-    //       });
-    //       return false;
-    //   });
-  });
+});
 
 $.fn.extend({
     postform: function(options, callback) { //{formdata: data/false, jsoncallback: true/false, action: true/false}

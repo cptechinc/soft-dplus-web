@@ -13,7 +13,7 @@
 
             if (!$contact->does_emailexist()) {
                 if ($contact->create()) {
-                    $response['msg'] = 'Contact Created successfully';
+                    $response['msg'] = 'Your message was sent successfully and we will get back to your shortly!';
                 } elseif (empty($name)) {
                     $response['error'] = true;
                     $response['msg'] = 'Fields are missing';

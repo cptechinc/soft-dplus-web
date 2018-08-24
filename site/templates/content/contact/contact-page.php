@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-3 mb-3 breadcrumb bg-warning font-weight-bold text-white">Contact</h1>
+        <h1 class="mt-3 mb-3 breadcrumb bg-info font-weight-bold text-white">Contact</h1>
 
         <!-- Content Row -->
         <div class="row">
@@ -27,15 +27,15 @@
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-lg-8 mb-4">
-                <h3 class="breadcrumb bg-info font-weight-bold text-white">Send us a Message</h3>
+                <h3 class="breadcrumb bg-success font-weight-bold text-white">Send us a Message</h3>
                 <p><?= $page->body; ?></p>
 
                 <div id="contact_form">
                     <form id="contact-form" action="<?= $page->url; ?>" method="POST">
                         <input type="hidden" name="action" id="contact-action" value="contact">
                         <input type="hidden" name="updated" id="contact-updated" value="<?= date("Y-m-d G:i:s"); ?>">
-                        <div class="alert response hidden" role="alert">
-                            <h4 class="alert-heading">Well done!</h4>
+                        <div class="alert response alert-success hidden" role="alert">
+                            <h4 class="alert-heading">Thank you!</h4>
                             <p class="alert-text">Thanks so much for your message! We will respond soon.</p>
                         </div>
                         <div class="control-group form-group">

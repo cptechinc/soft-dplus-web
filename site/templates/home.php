@@ -13,7 +13,7 @@
 	                	<div class="carousel-caption text-left pb-5">
 	                  		<h1 class="display-3 font-weight-bold">One System for All</h1>
 	                  		<p>No need to purchase other systems to run certain functions </p>
-	                  		<p><a class="btn btn-lg btn-primary pull-right" href="<?php echo $pages->get('template=request-demo')->url; ?>" role="button">Request a Demo Today</a></p>
+	                  		<p><a class="btn btn-lg btn-info pull-right" href="<?php echo $pages->get('template=request-demo')->url; ?>" role="button">Request a Demo Today</a></p>
 	                	</div>
 	              	</div>
 	            </div>

@@ -18,27 +18,6 @@
 	$action = $input->post->text('action');
 
     switch($action) {
-        case 'contact':
-            $contact = new ContactLeads();
-            $contact->set('name', $input->post->text('name'));
-            $contact->set('email', $input->post->text('email'));
-            $contact->set('company', $input->post->text('company'));
-            $contact->set('phone', $input->post->text('phone'));
-            $contact->set('message', $input->post->text('message'));
-            $contact->set('updated', $input->post->text('updated'));
-
-            if (!$contact->does_emailexist()) {
-                if ($contact->create()) {
-                    echo "<h1>New record created successfully</h1>";
-                } elseif (empty($name)) {
-                    echo "<h1>Your fields are empty.</h1>";
-                } else {
-                    echo "Error: " . $sql . "<br>" . $connect->error;
-                }
-            } else {
-                echo "<h1>Email already exists.</h1>";
-            }
-            break;
         case 'request-demo':
             $contact = new ContactLeads();
             $contact->set('name', $input->post->text('name'));
@@ -50,7 +29,14 @@
 
             if (!$contact->does_emailexist()) {
                 if ($contact->create()) {
-                    echo "<h1>New record created successfully</h1>";
+                    echo "<body class='bg-info'>";
+                        echo "<div class='container-fluid'>";
+                            echo "<div class='text-center' style='margin-top: 15%;'>";
+                            echo "<i class='fa fa-thumbs-o-up fa-5x text-white' aria-hidden='true'></i>";
+                                echo "<h4 class='text-white font-weight-bold mt-4'>Thanks so much for contacting us.</br>We'll get back to you shortly!</h4>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</body>";
                 } elseif (empty($name)) {
                     echo "<h1>Your fields are empty.</h1>";
                 } else {
