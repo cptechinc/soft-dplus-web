@@ -2,9 +2,9 @@
     GENERAL
 *******************************************/
 
-body {scroll-behavior: smooth !important;}
-
 ul {list-style: none;}
+
+.page {min-height: 622px;}
 
 .hidden {display: none;}
 
@@ -30,3 +30,7 @@ i.green {color: #00800D;}
 /*******************************************
     SOFTWARE
 *******************************************/
+
+.software-list ul {list-style: disc;}
+
+h2.software-category-title {padding-bottom: 8px;}

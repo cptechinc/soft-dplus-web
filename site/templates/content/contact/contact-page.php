@@ -1,5 +1,5 @@
     <!-- Page Content -->
-    <div class="container">
+    <div class="container page">
 
         <!-- Page Heading/Breadcrumbs -->
         <h1 class="mt-3 mb-3 breadcrumb bg-info font-weight-bold text-white">Contact</h1>
@@ -41,35 +41,31 @@
                         <div class="control-group form-group">
                             <div class="controls">
                                 <label>Full Name:</label>
-                                <input type="text" class="form-control" name="name" id="contact-name">
-                                <label class="error" for="name" id="name_error">This field is required.</label>
+                                <input type="text" class="form-control form-control-sm" name="name" id="contact-name">
                             </div>
                         </div>
                         <div class="control-group form-group">
                             <div class="controls">
                                 <label>Company:</label>
-                                <input type="text" class="form-control" name="company" id="contact-company">
+                                <input type="text" class="form-control form-control-sm" name="company" id="contact-company">
                             </div>
                         </div>
                         <div class="control-group form-group">
                             <div class="controls">
                                 <label>Phone Number:</label>
-                                <input type="tel" class="form-control" name="phone" id="contact-phone">
-                                <label class="error" for="phone" id="phone_error">This field is required.</label>
+                                <input type="tel" class="form-control form-control-sm" name="phone" id="contact-phone">
                             </div>
                         </div>
                         <div class="control-group form-group">
                             <div class="controls">
                                 <label>Email Address:</label>
-                                <input type="email" class="form-control" name="email" id="contact-email">
-                                <label class="error" for="email" id="email_error">This field is required.</label>
+                                <input type="email" class="form-control form-control-sm" name="email" id="contact-email">
                             </div>
                         </div>
                         <div class="control-group form-group">
                             <div class="controls">
                                 <label>Message:</label>
-                                <textarea rows="5" cols="100" class="form-control" name="message" id="contact-message" maxlength="999" style="resize:none"></textarea>
-                                <label class="error" for="message" id="message_error">This field is required.</label>
+                                <textarea rows="5" cols="100" class="form-control form-control-sm" name="message" id="contact-message" maxlength="999" style="resize:none"></textarea>
                             </div>
                         </div>
                         <button type="submit" name="submit" class="btn btn-info button" id="contact-button" value="Send">Send Message</button>

@@ -1,7 +1,7 @@
 <?php $page->htmlbodyattributes = $page->bootstrap->generate_attributes("class=demo-background|style=background-image: url('{$page->images->url}')"); ?>
 <?php include('./_head-blank.php'); ?>
     <!-- Page Content -->
-    <div class="container">
+    <div class="container page">
       <!-- Contact Form -->
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row demo-request">

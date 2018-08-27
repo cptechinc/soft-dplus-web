@@ -42,26 +42,17 @@
 
       <!-- Marketing Icons Section -->
       	<div class="row mt-5 mb-4">
-		  	<div class="col-lg-3 mt-3 mb-4 text-center">
-  			  	<i class="fa fa-handshake-o fa-5x text-info" aria-hidden="true"></i>
-  			  	<h4 class="mt-5"><strong>Quality Support</strong></h4>
-  				<p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        	</div>
-        	<div class="col-lg-3 mt-3 mb-4 text-center">
-  				<i class="fa fa-line-chart fa-5x text-info" aria-hidden="true"></i>
-  	  			<h4 class="mt-5"><strong>Generate Reports</strong></h4>
-  	  			<p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        	</div>
-        	<div class="col-lg-3 mt-3 mb-4 text-center">
-  				<i class="fa fa-cogs fa-5x text-info" aria-hidden="true"></i>
-  	  			<h4 class="mt-5"><strong>Always Working</strong></h4>
-  	  			<p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-  	    	</div>
-  			<div class="col-lg-3 mt-3 mb-4 text-center">
-  				<i class="fa fa-diamond fa-5x text-info" aria-hidden="true"></i>
-  	  			<h4 class="mt-5"><strong>Customer Service</strong></h4>
-  	  			<p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        	</div>
+			<?php $icons = $page->children; ?>
+
+            <?php foreach ($icons as $icon) : ?>
+                <?php if ($icon->template->name == 'data-point') : ?>
+				  	<div class="col-lg-3 mt-3 mb-4 text-center">
+		  			  	<i class="<?= $icon->icon_code; ?>" style="color: #<?= $icon->sitecolor; ?>" aria-hidden="true"></i>
+		  			  	<h4 class="mt-5"><strong><?= $icon->title; ?></strong></h4>
+		  				<p class="mt-3"><?=$icon->body; ?></p>
+		        	</div>
+				<?php endif; ?>
+            <?php endforeach; ?>
       	</div>
       <!-- /.row -->
   	</div>
