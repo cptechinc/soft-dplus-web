@@ -16,7 +16,8 @@
                 <img class="img-fluid rounded" src="<?= $page->images->url; ?>" alt="">
 
                 <!-- Date/Time -->
-                <h5 class="mt-3 mb-3 breadcrumb bg-success font-weight-bold text-white"><?= $page->title; ?></h5>
+                <h3 class="mt-3 mb-3 font-weight-bold"><?= $page->title; ?></h3>
+                <hr>
                 <p>Posted on <?= $page->news_post_date; ?>&nbsp;by <?= $page->news_post_author; ?></p>
 
                 <hr>

@@ -49,9 +49,6 @@
         case 'update-contact';
             $email = $input->post->text('email');
             $contact = ContactLeads::load($email);
-            echo var_dump($contact->active);
-            echo "</br>";
-            echo var_dump($contact->updated);
 
             if ($contact->active == 'N') {
                 $contact->set_active();

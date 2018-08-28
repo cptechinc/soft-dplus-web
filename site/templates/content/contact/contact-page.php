@@ -16,9 +16,9 @@
             <div class="col-lg-4 mb-4">
                 <p><strong><?= $appconfig->company_name; ?></strong></br>
                 <?= $appconfig->company_address; ?></p>
-                <p>Phone: <a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></br>
-                    Email: <a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
-                <p>Hours: <?= $page->hours; ?></p>
+                <p>Phone:&emsp;<a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></br>
+                    Email:&emsp;<a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
+                <p>Hours:&emsp;<?= $page->hours; ?></p>
             </div>
         </div>
         <!-- /.row -->
@@ -32,7 +32,6 @@
 
                 <div id="contact_form">
                     <form id="contact-form" action="<?= $page->url; ?>" method="POST">
-                        <input type="hidden" name="action" id="contact-action" value="contact">
                         <input type="hidden" name="updated" id="contact-updated" value="<?= date("Y-m-d G:i:s"); ?>">
                         <div class="alert response alert-success hidden" role="alert">
                             <h4 class="alert-heading">Thank you!</h4>

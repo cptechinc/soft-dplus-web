@@ -4,10 +4,9 @@
     <div class="container page">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-3 mb-3 breadcrumb bg-info font-weight-bold text-white">Inside DistributionPlus</h1>
+        <h1 class="mt-3 mb-3 breadcrumb bg-info font-weight-bold text-white">Inside <?= $appconfig->site_displayname; ?></h1>
         <div class="row mt-5 mb-3">
             <?php $icons = $page->children; ?>
-
             <?php foreach ($icons as $icon) : ?>
                 <?php if ($icon->template->name == 'data-point') : ?>
                     <div class="col-md-3 my-3 text-center">

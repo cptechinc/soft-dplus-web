@@ -14,10 +14,12 @@
                 <?php $siblings = $page->siblings; ?>
                 <ul class="list-group">
                     <?php foreach ($siblings as $sibling) : ?>
-                        <?php if ($sibling->title == $page->title) : ?>
-                            <li class="list-group-item bg-info"><a href="<?= $sibling->url; ?>" class="text-white"><?= $sibling->title; ?></a></li>
-                        <?php else : ?>
-                            <li class="list-group-item border-info"><a href="<?= $sibling->url; ?>" class="text-info"><?= $sibling->title; ?></a></li>
+                        <?php if ($sibling->template->name != 'data-point') : ?>
+                            <?php if ($sibling->title == $page->title) : ?>
+                                <li class="list-group-item bg-info"><a href="<?= $sibling->url; ?>" class="text-white"><?= $sibling->title; ?></a></li>
+                            <?php else : ?>
+                                <li class="list-group-item border-info"><a href="<?= $sibling->url; ?>" class="text-info"><?= $sibling->title; ?></a></li>
+                            <?php endif; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </ul>
