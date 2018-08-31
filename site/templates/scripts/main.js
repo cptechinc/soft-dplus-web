@@ -7,11 +7,11 @@ $(function() {
         e.preventDefault();
         var form = $(this);
         form.postform({jsoncallback: true}, function(json) {
-            var class = 'alert-success';
+            var alertclass = 'alert-success';
             if (json.error) {
-                class = 'alert-danger';
+            var alertclass = 'alert-danger';
             }
-            form.find('.response').removeClass('hidden').addClass(class);
+            form.find('.response').removeClass('hidden').addClass(alertclass);
             form.find('.response').find('.alert-text').text(json.msg);
         });
     });

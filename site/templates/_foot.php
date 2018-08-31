@@ -5,8 +5,8 @@
                 <div class="col-sm-6">
                     <p class="text-white m-0"><?= $appconfig->company_name; ?></br>
                     <?= $appconfig->company_address; ?></br>
-                    Phone: <a href="tel:<?= $appconfig->company_phone; ?>"><?= $appconfig->company_phone; ?></a></br>
-                    Email: <a href="mailto:<?= $appconfig->company_email; ?>"><?= $appconfig->company_email; ?></a></p>
+                    Phone: <a href="tel:<?= $appconfig->company_phone; ?>" class="text-info"><?= $appconfig->company_phone; ?></a></br>
+                    Email: <a href="mailto:<?= $appconfig->company_email; ?>" class="text-info"><?= $appconfig->company_email; ?></a></p>
                 </div>
                 <div class="col-sm-6">
                     <p class="text-white text-right">Copyright &copy; <?= date('Y'); ?> <?= $appconfig->company_name; ?></p>
