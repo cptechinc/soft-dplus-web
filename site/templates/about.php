@@ -28,7 +28,7 @@
         <div class="row my-5">
             <?php $logos = $page->customer_logos; ?>
             <?php foreach ($logos as $logo) : ?>
-                <div class="col-sm-3 mb-4">
+                <div class="col-sm-4 mb-4">
                     <img class="img-fluid" src="<?= $logo->url; ?>" alt="">
                 </div>
             <?php endforeach; ?>

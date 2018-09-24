@@ -43,6 +43,22 @@
         </div>
         <!-- /.row -->
 
+        <div class="row">
+            <?php foreach ($children as $child) : ?>
+                <?php if ($child->template->name !== 'data-point') : ?>
+                    <dl class="col-sm-12">
+                        <h3 class="font-weight-bold text-dark"><?= $child->title; ?></h3>
+                        <p><?= $child->summary; ?></p>
+                        <?php $kids = $child->children; ?>
+                        <?php foreach ($kids as $kid) : ?>
+                            <dt><?= $kid->title; ?></dt>
+                            <dd><?= $kid->body; ?></dd>
+                        <?php endforeach; ?>
+                    </dl>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+
     </div>
     <!-- /.container -->
 
